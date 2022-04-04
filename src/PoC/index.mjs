@@ -42,8 +42,8 @@ function authToken(id, secret) {
     return `Basic ${base64token}`;
 }
 
-//const miURL = host + "/messages/";
-let token = authToken(1649063349757, "abc123");
+                      // id usuario  contraseña usuario
+let token = authToken(1649066943349, "abc123");
 
 // con GET
 // Actualizar la lista de usuarios
@@ -117,7 +117,6 @@ function messageBotonClickHandler() {
 // función que devuelve la lista actualizada de mensajes (por consola)
 function updateBotonClickHandler() {
     authGet(host + "/messages/", token);
-
 }
 
 // Evento botón
