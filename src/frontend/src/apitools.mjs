@@ -1,9 +1,9 @@
 export const host = "https://web-develop-react-express-chat.herokuapp.com";
 
 // {String} url - Url, {String} name - Name user, {String} password - Password user, {Number} id - Id user
-// Un token de acceso es un string aleatorio que identifica a un usuario, (la app utiliza para realizar llamadas a la API)
+// Un token de acceso es un string que identifica a un usuario, (utilizado por la app para realizar llamadas a la API)
 
-// Token - para crear autorización, se pasa nombre de usuario y password, y genera autorización 
+// Token - para crear autorización, se pasa nombre de usuario y password y genera autorización 
 export function authToken(name, password) {
     // En autenticación Basic, usuario y contraseña se separan con ':'
     const authToken = `${name}:${password}`;
@@ -13,13 +13,13 @@ export function authToken(name, password) {
     return `Basic ${base64Token}`;
 }
 
-export async function authGet(url, id, password) {
+export async function authGet(url, token) {
     const response = await fetch(
         url,
         {
             headers: {
                 // te autoriza, da token autorizado 
-                Authorization: authToken(id, password)
+                Authorization: token
             }
         });
     const data = await response.json();
