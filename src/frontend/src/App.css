@@ -2,26 +2,47 @@
     background-image: url("./beautiful.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
-    height: 100vh;
-    margin-top: 0;
-    padding-top: 30px;
+    height: 120vh;
 }
 
 .grid {
     display: grid;
-    align-content: stretch;
-    justify-items: center;
+    grid-template-rows: 1fr 1.5fr 2fr;
 }
 
 .flex {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
-.sinMargin {
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.align-content {
+    align-content: flex-start;
+}
+
+.align-items {
+    align-items: center;
+}
+
+.margin-top {
     margin-top: 0;
+}
+
+.margin-left {
+    margin-left: 7%;
+}
+
+.margin-bottom {
+    margin-bottom: 0;
+}
+
+.marginEntrar {
+    margin-bottom: 30px;
 }
 
 .colorBlue {
@@ -35,3 +56,22 @@
 .em {
     font-size: 1em;
 }
+
+.buttonEntrar {
+    background: radial-gradient( rgb(250, 218, 90), rgb(252, 230, 140), rgb(252, 230, 140), rgb(253, 244, 201));
+}
+
+.heightTextarea {
+    height: 7vh;
+}
+
+.widthTextarea {
+    min-width: 20vw;
+   
+}
+
+.fontTextarea {
+    font-size: 1.3em;
+}
+
+

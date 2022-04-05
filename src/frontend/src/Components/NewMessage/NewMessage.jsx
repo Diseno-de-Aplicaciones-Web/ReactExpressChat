@@ -7,10 +7,11 @@ function NewMessage ({id, password}) {
     const [ newMessage, setnewMessage] = useState("");
 
     return (
-        <div className='NuevoMensaje colorBlue'> 
-        <h1 className='sinMargin'>Envia un mensaje</h1>
-        <textarea></textarea>
-        <p>{"Tu mensaje: " + newMessage}</p>
+        <div className='NuevoMensaje margin-left flex flex-wrap align-content colorBlue'> 
+        <h1>Envia un mensaje</h1>
+        <textarea className='fontTextarea colorBlue heightTextarea widthTextarea'></textarea>
+        <h3 className='bold margin-bottom'>Tu mensaje: </h3>
+        <p className='margin-top'>{newMessage}</p>
         </div>
     );
 }
