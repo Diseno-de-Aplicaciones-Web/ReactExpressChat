@@ -11,12 +11,8 @@ function Login() {
             <h1>Logeate para entrar</h1>
             <div className='flex '>
                 <input className='em' type="text" id="inputUser" placeholder='Usuario' />
-                <br />
-                <br />
-                <input className='em' type="text" id="inputPassword" placeholder='Contraseña' />
-                <br />
-                <br />
-                <button className='clikButton bold em marginEntrar buttonEntrar'>Entrar</button>
+                <input className='em margin-top' type="text" id="inputPassword" placeholder='Contraseña' />
+                <button className='clikButton bold em marginEntrar margin-top buttonEntrar'>Entrar</button>
             </div>
         </div>
     );

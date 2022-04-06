@@ -10,7 +10,7 @@ function NewMessage ({id, password}) {
         <div className='NuevoMensaje margin-left flex flex-wrap align-content colorBlue'> 
         <h1>Envia un mensaje</h1>
         <textarea className='fontTextarea colorBlue heightTextarea widthTextarea'></textarea>
-        <h3 className='bold margin-bottom'>Tu mensaje: </h3>
+        <h3 className='bold'>Tu mensaje: </h3>
         <p className='margin-top'>{newMessage}</p>
         </div>
     );

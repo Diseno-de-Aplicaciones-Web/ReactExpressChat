@@ -8,15 +8,13 @@ import './App.css';
 function App() {
   return (
     <>
-
-      <body className='bg-fondo margin-top'>
+      <div className='bg-fondo margin-topNo'>
         <div className='grid'>
           <Login />
-          <Messages id="1649145553851" password="abc123" />
+          <Messages id="1649238562286" password="abc123" />
           <NewMessage />
         </div>
-      </body>
-
+      </div>
     </>
   );
 }
