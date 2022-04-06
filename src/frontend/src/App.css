@@ -4,7 +4,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    height: 120vh;
+    height: 100%;
 }
 
 .grid {
@@ -37,8 +37,12 @@
     margin-left: 7%;
 }
 
-.margin-bottom {
+.margin-bottomNo {
     margin-bottom: 0;
+}
+
+.margin-bottom {
+    margin-bottom: 30px;
 }
 
 .marginEntrar {
@@ -57,10 +61,6 @@
     font-size: 1em;
 }
 
-.buttonEntrar {
-    background: radial-gradient( rgb(250, 218, 90), rgb(252, 230, 140), rgb(252, 230, 140), rgb(253, 244, 201));
-}
-
 .heightTextarea {
     height: 7vh;
 }
@@ -74,4 +74,9 @@
     font-size: 1.3em;
 }
 
+.buttonEntrar {
+    background-color: rgb(250, 211, 104);
+}
 
+/* background: radial-gradient( rgb(250, 218, 90), rgb(252, 230, 140), rgb(252, 230, 140), rgb(253, 244, 201));
+    */
