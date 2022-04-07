@@ -14,7 +14,7 @@
 
 .grid {
     display: grid;
-    grid-template-rows: 2.5fr 3fr 1.5fr 1fr;
+    grid-template-rows: 2fr 3fr 1.5fr 1fr;
 }
 
 .flex {
@@ -91,7 +91,7 @@
     border: solid 1px;
 }
 
-.buttonEntrar {
+.buttonColor {
     background-color: rgb(255, 227, 149);
 }
 

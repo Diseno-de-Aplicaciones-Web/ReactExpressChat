@@ -3,9 +3,9 @@
 // Un token de acceso es un string que identifica a un usuario, (utilizado por la app para realizar llamadas a la API)
 
     // Token - para crear autorización, se pasa nombre de usuario y password y genera autorización 
- function authToken(name, password) {
+ function authToken(id, password) {
         // En autenticación Basic, usuario y contraseña se separan con ':'
-        const authToken = `${name}:${password}`;
+        const authToken = `${id}:${password}`;
         // Y se codifican en Base64
         const base64Token = btoa(authToken);
         console.log(base64Token);
