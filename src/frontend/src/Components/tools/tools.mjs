@@ -8,7 +8,7 @@
         const authToken = `${id}:${password}`;
         // Y se codifican en Base64
         const base64Token = btoa(authToken);
-        console.log(base64Token);
+        //console.log(base64Token);
         return `Basic ${base64Token}`;
  }
 export default authToken

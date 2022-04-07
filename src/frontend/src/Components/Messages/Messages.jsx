@@ -26,7 +26,7 @@ function Messages(props) {
         const data = await response.json();
         // para verlo bonito
         const datafull = data.map(
-            (item)=><li className='margin-bottom bgMensaje' key={item.time}>Usuario: {item.source} | Mensaje: {item.content}</li>
+            (item)=><li className='margin-bottom bgMensaje colorRed' key={item.time}>Usuario: {item.source} | Mensaje: {item.content}</li>
         )
         setMessages(datafull)
         //console.log(data);

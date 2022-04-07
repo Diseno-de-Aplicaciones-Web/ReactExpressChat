@@ -28,7 +28,7 @@ function NewMessage (props) {
             }
         );
         const responseData = await response.json();
-        console.log(responseData)
+        //console.log(responseData)
     }
 
     // Evento onChange en React, cada vez que se escribe una letra en el textarea se invoca el método handleChange
