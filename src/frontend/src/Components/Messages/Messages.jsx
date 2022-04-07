@@ -1,23 +1,30 @@
-// Componente Messages({props})
+// Componente Messages(props)
+// Se trae el id y el password de function authToken(id, password) que esta en tools.mjs
+// si no se hace dispersión ({id, password}), ponemos (props), authToken(props.id, props.password)
 
 import { useEffect, useState } from "react";
 import authToken from "../tools/tools.mjs";
 
 const url = "https://web-develop-react-express-chat.herokuapp.com";
 
-// para actualizar mensajes, método GET
+// Actualizar y ver lista de mensajes, método GET
 function Messages(props) {
     const [messages, setMessages] = useState("");
+    const token = authToken(props.id, props.password);
+    const data = JSON.stringify({content: messages});
+
+    // función autentificación GET
     async function authGet(url, id, password) {
         const response = await fetch(
             url,
             {
-                headers: {
-                    // te autoriza, da token autorizado 
-                    Authorization: authToken(id, password)
+                headers: { // te autoriza, da token autorizado
+                    'Content-Type': 'application/json;charset=utf-8',
+                    Authorization: token
                 }
             });
         const data = await response.json();
+        // para verlo bonito
         const datafull = data.map(
             (item)=><li className='margin-bottom bgMensaje' key={item.time}>Usuario: {item.source} | Mensaje: {item.content}</li>
         )
@@ -26,7 +33,7 @@ function Messages(props) {
         return data;
     }
 
-    // coge los mensajes actualizados para verlos en pantalla
+    // ya estamos autorizados y vemos los mensajes actualizados en pantalla
     function updateMessages() {
        authGet(url + '/messages/', props.id, props.password)
     }

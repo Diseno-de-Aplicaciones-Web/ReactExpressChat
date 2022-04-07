@@ -14,7 +14,7 @@
 
 .grid {
     display: grid;
-    grid-template-rows: 2fr 3fr 1.5fr 1fr;
+    grid-template-rows: 2fr 3fr 2fr 1fr;
 }
 
 .flex {
@@ -92,7 +92,7 @@
 }
 
 .buttonColor {
-    background-color: rgb(255, 227, 149);
+    background-color: rgb(255, 212, 121);
 }
 
 /* background: radial-gradient( rgb(250, 218, 90), rgb(252, 230, 140), rgb(252, 230, 140), rgb(253, 244, 201));

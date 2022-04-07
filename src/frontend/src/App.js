@@ -12,8 +12,8 @@ function App() {
       <div className='bg-fondo margin-topNo'>
         <div className='grid'>
           <Login />
-          <Messages id="1649279872037" password="abc123" />
-          <NewMessage />
+          <Messages id="1649315965168" password="abc123" />
+          <NewMessage id="1649315965168" password="abc123" />
         </div>
       </div>
     </>

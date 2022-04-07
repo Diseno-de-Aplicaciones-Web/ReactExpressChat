@@ -1,4 +1,4 @@
-// Componente Login({props})
+// Componente Login(props)
 
 import { useEffect, useState, useRef } from "react";
 
