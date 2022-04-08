@@ -70,8 +70,8 @@ function Login({ idSetter }) { // ({idSetter}) en vez de (props)
             <div id="desconectar">
                 <h1>Cierra Sesión</h1>
                 <div className='colFlex'>
-                    <p className="text cursiva bold">Esperamos</p>
-                    <p className="text cursiva bold">¡verte pronto!</p>
+                    <p className="text cursiva bold">¿Quieres salir</p>
+                    <p className="text cursiva bold">de la aplicación?</p>
                     <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick={loginSendData}>Desconectar</button>
                 </div>
             </div>
