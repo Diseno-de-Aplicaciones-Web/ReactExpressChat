@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from "react";
 const url = "https://web-develop-react-express-chat.herokuapp.com";
 
 // Componente Login para realizar el Registro del usuario, método POST
-function Login({idSetter}) { // ({idSetter}) en vez de (props)
+function Login({ idSetter }) { // ({idSetter}) en vez de (props)
     const [xuserName, setXuserName] = useState("");
     const [xpassword, setXpassword] = useState("");
 
@@ -40,7 +40,7 @@ function Login({idSetter}) { // ({idSetter}) en vez de (props)
         const data = JSON.stringify({ userName: xuserName, password: xpassword });
         const newIdPromise = post(url + "/login/", data);
         newIdPromise.then(
-            newId => { 
+            newId => {
                 idSetter(newId);
                 console.log(data, newId);
             }
@@ -49,15 +49,33 @@ function Login({idSetter}) { // ({idSetter}) en vez de (props)
     }
 
     return (
-        <div className='logearte flex align-items'>
-            <h1>Regístrate</h1>
-            {/*<h1>Logeate para entrar</h1>*/} {/* Inicia Sesión */}
-            <div className='flex '>
-                <input className='em margin-top' type="text" id="userName" onChange={userNameHandleChange} value={xuserName} placeholder='Usuario' />
-                <input className='em margin-top' type="text" id="password" onChange={passwordHandleChange} value={xpassword} placeholder='Contraseña' />
-                <button className='clikButton bold em marginEntrar margin-top buttonColor borde-fino' id="loginSendData" onClick={loginSendData}>Entrar</button>
+        <div className='flex flex-wrap justify-content align-items margin-bottom padding-top'>
+            <div id="registro">
+                <h1>Regístrate</h1>
+                {/*<h1>Logeate para entrar</h1>*/} {/* Inicia Sesión */}
+                <div className='colFlex'>
+                    <input className='em inputSpace' type="text" id="userName" onChange={userNameHandleChange} value={xuserName} placeholder='Usuario' />
+                    <input className='em inputSpace' type="text" id="password" onChange={passwordHandleChange} value={xpassword} placeholder='Contraseña' />
+                    <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick={loginSendData}>Entrar</button>
+                </div>
             </div>
-        </div>
+            <div id="login">
+                <h1>Inicia Sesión</h1>
+                <div className='colFlex'>
+                    <input className='em inputSpace' type="text" id="userName" onChange={userNameHandleChange} value={xuserName} placeholder='Usuario' />
+                    <input className='em inputSpace' type="text" id="password" onChange={passwordHandleChange} value={xpassword} placeholder='Contraseña' />
+                    <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick={loginSendData}>Entrar</button>
+                </div>
+            </div>
+            <div id="desconectar">
+                <h1>Cierra Sesión</h1>
+                <div className='colFlex'>
+                    <p className="text cursiva bold">Esperamos</p>
+                    <p className="text cursiva bold">¡verte pronto!</p>
+                    <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick={loginSendData}>Desconectar</button>
+                </div>
+            </div>
+        </div >
     );
 }
 export default Login;

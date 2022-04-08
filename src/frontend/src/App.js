@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div className='bg-fondo margin-topNo'>
-        <div className='grid'>
+        <div className='rowGrid'>
           <Login idSetter={setId} />  {/*Login subcomponente del Componente App()*/}
           <Messages id={id} password="abc123" /> {/*Messages subcomponente del Componente App()*/}
           <NewMessage id={id} password="abc123" /> {/*NewMessage subcomponente del Componente App()*/}
