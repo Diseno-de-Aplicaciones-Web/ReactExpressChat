@@ -1,76 +1,11 @@
-// Componente Login({})
+// Componente SignUp({idSetter})
 
-import { useEffect, useState, useRef } from "react";
-import authToken from "../tools/tools.mjs";
+import { useEffect, useState } from "react";
 
 const url = "https://web-develop-react-express-chat.herokuapp.com";
 
-// Componente Login para logearte (Iniciar Sesión), método POST
-function Login({ }) { // ({ }) en vez de (props)
-    const [xuserName, setXuserName] = useState("");
-    const [xpassword, setXpassword] = useState("");
-
-
-
-
-
-
-
-
-    return (
-        <div className='flex flex-wrap justify-content align-items margin-bottom padding-top'>
-            <div id="registro">
-                <h1>Regístrate</h1>
-                {/*<h1>Logeate para entrar</h1>*/} {/* Inicia Sesión */}
-                <div className='colFlex'>
-                    <input className='em inputSpace' type="text" id="userName" onChange value={xuserName} placeholder='Usuario' />
-                    <input className='em inputSpace' type="text" id="password" onChange value={xpassword} placeholder='Contraseña' />
-                    <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick>Entrar</button>
-                </div>
-            </div>
-            <div id="login">
-                <h1>Inicia Sesión</h1>
-                <div className='colFlex'>
-                    <input className='em inputSpace' type="text" id="userName" onChange value={xuserName} placeholder='Usuario' />
-                    <input className='em inputSpace' type="text" id="password" onChange value={xpassword} placeholder='Contraseña' />
-                    <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick>Entrar</button>
-                </div>
-            </div>
-            <div id="desconectar">
-                <h1>Cierra Sesión</h1>
-                <div className='colFlex'>
-                    <p className="text cursiva bold">¿Quieres salir</p>
-                    <p className="text cursiva bold">de la aplicación?</p>
-                    <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick>Desconectar</button>
-                </div>
-            </div>
-        </div >
-    );
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export default Login;
-
-
-/*
-// Componente Login para realizar el Registro del usuario, método POST
-function Login({ id }) { // ({idSetter}) en vez de (props)
+// Componente SignUp para realizar el Registro del usuario, método POST
+function SignUp({ idSetter }) { // ({idSetter}) en vez de (props)
     const [xuserName, setXuserName] = useState("");
     const [xpassword, setXpassword] = useState("");
 
@@ -106,7 +41,7 @@ function Login({ id }) { // ({idSetter}) en vez de (props)
         const newIdPromise = post(url + "/login/", data);
         newIdPromise.then(
             newId => {
-                id(newId);
+                idSetter(newId);
                 console.log(data, newId);
             }
         )
@@ -117,7 +52,7 @@ function Login({ id }) { // ({idSetter}) en vez de (props)
         <div className='flex flex-wrap justify-content align-items margin-bottom padding-top'>
             <div id="registro">
                 <h1>Regístrate</h1>
-               
+                {/*<h1>Logeate para entrar</h1>*/} {/* Inicia Sesión */}
                 <div className='colFlex'>
                     <input className='em inputSpace' type="text" id="userName" onChange={userNameHandleChange} value={xuserName} placeholder='Usuario' />
                     <input className='em inputSpace' type="text" id="password" onChange={passwordHandleChange} value={xpassword} placeholder='Contraseña' />
@@ -143,36 +78,5 @@ function Login({ id }) { // ({idSetter}) en vez de (props)
         </div >
     );
 }
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default SignUp;
 
