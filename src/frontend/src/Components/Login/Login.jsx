@@ -21,7 +21,6 @@ function Login({ }) { // ({ }) en vez de (props)
         <div className='flex flex-wrap justify-content align-items margin-bottom padding-top'>
             <div id="registro">
                 <h1>Regístrate</h1>
-                {/*<h1>Logeate para entrar</h1>*/} {/* Inicia Sesión */}
                 <div className='colFlex'>
                     <input className='em inputSpace' type="text" id="userName" onChange value={xuserName} placeholder='Usuario' />
                     <input className='em inputSpace' type="text" id="password" onChange value={xpassword} placeholder='Contraseña' />

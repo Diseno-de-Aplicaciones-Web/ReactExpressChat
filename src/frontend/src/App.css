@@ -1,7 +1,24 @@
 /* id */
+#registro {
 
+    color: black;
+}
+
+#login {
+
+    color: black;
+}
+
+#desconectar {
+
+    color: black;
+}
 
 /* clases */
+.hidden {
+    display: none; /* Se oculta y desaparece el espacio */
+}
+
 .bg-fondo {
     background-image: url("./beautiful.jpg");
     background-repeat: no-repeat;
@@ -13,13 +30,14 @@
 }
 
 .bgMensaje {
-    background: linear-gradient(to top,  transparent, rgb(252, 247, 234), rgb(252, 247, 234), rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255), transparent);
+    background: linear-gradient(to top, transparent, rgb(252, 247, 234), rgb(252, 247, 234), rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255), transparent);
 }
 
 .rowGrid {
     display: grid;
     grid-template-rows: 1.5fr 1fr 2fr;
 }
+
 /*
 .colGrid {
     display: grid;
@@ -29,7 +47,7 @@
 .flex {
     display: flex;
     flex-direction: row;
-   
+
 }
 
 .colFlex {
@@ -110,7 +128,7 @@
 }
 
 .bold {
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .em {
@@ -123,7 +141,7 @@
 
 .widthTextarea {
     min-width: 20vw;
-   
+
 }
 
 .fontTextarea {
@@ -140,5 +158,3 @@
 
 /* background: radial-gradient( rgb(250, 218, 90), rgb(252, 230, 140), rgb(252, 230, 140), rgb(253, 244, 201));
     */
-
-

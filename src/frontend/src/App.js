@@ -1,3 +1,4 @@
+// Componente App()
 import { useState } from "react";
 import Login from './Components/Login/Login';
 import Messages from './Components/Messages/Messages';
@@ -15,7 +16,7 @@ function App() {
       <div className='bg-fondo margin-topNo'>
         <div className='rowGrid'>
         <SignUp idSetter={setId} url={url} /> {/*SignUp (Registro) subcomponente del Componente App()*/} 
-       
+        <Login /> {/*Login (Iniciar Sesión) subcomponente del Componente App()*/}
         <Messages id="1649676830154" password="abc123" /> {/*Messages (ver lista de mensajes) subcomponente del Componente App()*/}
         <NewMessage id={id} token={token} /> {/*NewMessage (enviar mensaje) subcomponente del Componente App()*/}
         </div>
