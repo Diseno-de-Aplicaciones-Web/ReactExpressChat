@@ -35,19 +35,16 @@
 
 .rowGrid {
     display: grid;
-    grid-template-rows: 1.5fr 1fr 2fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
 }
 
-/*
-.colGrid {
+.grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
 }
-*/
+
 .flex {
     display: flex;
     flex-direction: row;
-
 }
 
 .colFlex {
@@ -64,11 +61,23 @@
 }
 
 .align-items {
+    align-items: flex-start;
+}
+
+.align-itemsEnd {
     align-items: flex-end;
 }
 
 .justify-content {
     justify-content: space-evenly;
+}
+
+.justify-contentCenter {
+    justify-content: center;
+}
+
+.justify-items {
+    justify-items: center;
 }
 
 .text {
@@ -100,7 +109,11 @@
 }
 
 .margin-left {
-    margin-left: 40px;
+    margin-left: 30px;
+}
+
+.margin-right {
+    margin-left: 20px;
 }
 
 .margin-bottomNo {

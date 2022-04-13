@@ -14,7 +14,7 @@ function Messages(props) {
     const data = JSON.stringify({content: messages});
 
     // función autentificación GET
-    async function authGet(url, id, password) {
+    async function authGet(url, token) { // función asincrona
         const response = await fetch(
             url,
             {
@@ -35,7 +35,7 @@ function Messages(props) {
 
     // ya estamos autorizados y vemos los mensajes actualizados en pantalla
     function updateMessages() {
-       authGet(url + '/messages/', props.id, props.password)
+       authGet(url + '/messages/', token)
     }
 
     // método setTimeout() o setInterval() para actualizar cada segundo
@@ -44,7 +44,7 @@ function Messages(props) {
     )
 
     return (
-        <div className='colFlex flex-wrap align-content margin-top'>
+        <div className='colFlex flex-wrap align-content'>
             <h1>Mensajes del Chat</h1>
             <h3 className='bold'>Mensajes: </h3>
             <ul className='margin-topNo list-style'>{messages}</ul>
@@ -52,32 +52,5 @@ function Messages(props) {
     );
 }
 export default Messages;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
