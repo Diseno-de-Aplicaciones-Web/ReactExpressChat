@@ -6,10 +6,14 @@ import authToken from "../tools/tools.mjs";
 const url = "https://web-develop-react-express-chat.herokuapp.com";
 
 // Componente Login para logearte (Iniciar Sesión), método POST
-function Login({ }) { // ({ }) en vez de (props)
-    const [xuserName, setXuserName] = useState("");
-    const [xpassword, setXpassword] = useState("");
+function Login({ id, password }) { // ({ }) en vez de (props)
+    const [userName, setUserName] = useState("");
+    const [token, setToken] = useState("");
 
+    const autorizacion = authToken(id, password);
+
+    
+   
 
 
 
@@ -18,21 +22,12 @@ function Login({ }) { // ({ }) en vez de (props)
 
 
     return (
-        <div className='flex flex-wrap justify-content align-items margin-bottom padding-top'>
-            <div id="registro">
-                <h1>Regístrate</h1>
-                {/*<h1>Logeate para entrar</h1>*/} {/* Inicia Sesión */}
-                <div className='colFlex'>
-                    <input className='em inputSpace' type="text" id="userName" onChange value={xuserName} placeholder='Usuario' />
-                    <input className='em inputSpace' type="text" id="password" onChange value={xpassword} placeholder='Contraseña' />
-                    <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick>Entrar</button>
-                </div>
-            </div>
+        <div className='flex flex-wrap justify-content align-itemsEnd margin-bottom'>
             <div id="login">
                 <h1>Inicia Sesión</h1>
                 <div className='colFlex'>
-                    <input className='em inputSpace' type="text" id="userName" onChange value={xuserName} placeholder='Usuario' />
-                    <input className='em inputSpace' type="text" id="password" onChange value={xpassword} placeholder='Contraseña' />
+                    <input className='em inputSpace' type="text" id="userName" onChange value={userName} placeholder='Usuario' disabled/>
+                    <input className='em inputSpace' type="text" id="password" onChange value={password} placeholder='Contraseña' disabled/>
                     <button className='clikButton bold em marginEntrar inputSpace buttonColor borde-fino' id="loginSendData" onClick>Entrar</button>
                 </div>
             </div>

@@ -44,7 +44,7 @@ function Messages(props) {
     )
 
     return (
-        <div className='colFlex flex-wrap align-content margin-top'>
+        <div className='colFlex flex-wrap align-content'>
             <h1>Mensajes del Chat</h1>
             <h3 className='bold'>Mensajes: </h3>
             <ul className='margin-topNo list-style'>{messages}</ul>

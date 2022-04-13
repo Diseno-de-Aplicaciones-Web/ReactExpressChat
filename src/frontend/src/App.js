@@ -7,17 +7,19 @@ import SignUp from "./Components/SignUp/SignUp";
 
 function App() {
   const [id, setId] = useState(0);
+  const [password, setPassword ] = useState("");
   const [token, setToken] = useState(0);
   const url = "https://web-develop-react-express-chat.herokuapp.com";
 
+ 
   return (
     <>
       <div className='bg-fondo margin-topNo'>
         <div className='rowGrid'>
-        <SignUp idSetter={setId} url={url} /> {/*SignUp (Registro) subcomponente del Componente App()*/} 
-       
-        <Messages id="1649676830154" password="abc123" /> {/*Messages (ver lista de mensajes) subcomponente del Componente App()*/}
-        <NewMessage id={id} token={token} /> {/*NewMessage (enviar mensaje) subcomponente del Componente App()*/}
+        <Login id={id} password={password} token={setToken} />  {/*Login (Iniciar Sesión) subcomponente del Componente App()*/}
+        <SignUp idSetter={setId} passwordSetter={setPassword} url={url} /> {/*SignUp (Registro) subcomponente del Componente App()*/} 
+        <Messages token={token} /> {/*Messages (ver lista de mensajes) subcomponente del Componente App()*/}
+        <NewMessage token={token} /> {/*NewMessage (enviar mensaje) subcomponente del Componente App()*/}
         </div>
       </div>
     </>

@@ -49,7 +49,7 @@ function NewMessage (props) {
     }
 
     return (
-        <div className='colFlex flex-wrap align-content colorBlue margin-top'> 
+        <div className='colFlex flex-wrap align-content colorBlue'> 
         <h1 className="text">Envia un mensaje</h1>
         <textarea className='fontTextarea colorBlue heightTextarea widthTextarea' onChange={newMessagehandleChange} value={newMessage}></textarea>
         <button className='colorBlue bold em buttonColor borde-fino' onClick={sendMessageTextarea} value={newMessage}>Enviar</button>
