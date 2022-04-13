@@ -68,3 +68,5 @@ function SignUp({ idSetter, passwordSetter }) { // ({idSetter}) en vez de (props
 export default SignUp;
 
 //'colFlex'
+
+//hola
