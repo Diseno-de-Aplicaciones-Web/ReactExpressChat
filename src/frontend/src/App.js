@@ -27,8 +27,6 @@ function App() {
   );
 }
 
-//hola
-
 export default App;
 
 //<Login idSetter={setId} token={token} />  {/*Login (Iniciar Sesión) subcomponente del Componente App()*/}

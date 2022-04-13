@@ -14,7 +14,7 @@ function Messages(props) {
     const data = JSON.stringify({content: messages});
 
     // función autentificación GET
-    async function authGet(url, id, password) {
+    async function authGet(url, token) { // función asincrona
         const response = await fetch(
             url,
             {
@@ -35,7 +35,7 @@ function Messages(props) {
 
     // ya estamos autorizados y vemos los mensajes actualizados en pantalla
     function updateMessages() {
-       authGet(url + '/messages/', props.id, props.password)
+       authGet(url + '/messages/', token)
     }
 
     // método setTimeout() o setInterval() para actualizar cada segundo
