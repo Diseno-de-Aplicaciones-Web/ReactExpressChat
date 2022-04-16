@@ -3,17 +3,16 @@
 // si no se hace dispersión ({id, password}), ponemos (props), authToken(props.id, props.password)
 
 import { useState } from "react";
-import  authToken  from "../tools/tools.mjs";
+import authToken from "../tools/tools.mjs";
 
 const url = "https://web-develop-react-express-chat.herokuapp.com";
 
 // Enviar un mensaje, método POST
-function NewMessage (props) {
-    
-    const [ newMessage, setNewMessage] = useState("");
-    const token = authToken(props.id, props.password);
-    const data = JSON.stringify({content: newMessage});
-    
+function NewMessage(props) {
+
+    const [newMessage, setNewMessage] = useState("");
+    const data = JSON.stringify({ content: newMessage });
+
     // función autentificación POST
     async function authPost(url, token, data) {
         const response = await fetch(
@@ -39,20 +38,23 @@ function NewMessage (props) {
     }
 
     // Evento onClick del button, para enviar el mensaje
-    function sendMessageTextarea() { 
+    function sendMessageTextarea() {
         //const token = authToken(props.id, props.password);
         //const data = JSON.stringify({content: newMessage});
         //console.log(data);
         //setNewMessage(token, data)
-        authPost(url + "/message/", token, data);
-        
+        if (props.token !== 0) {
+            authPost(url + "/message/", props.token, data);
+        } else {
+            window.alert("Usuario no conectado " + " Tienes que Iniciar Sesión")
+        }
     }
 
     return (
-        <div className='colFlex flex-wrap align-content colorBlue'> 
-        <h1 className="text">Envia un mensaje</h1>
-        <textarea className='fontTextarea colorBlue heightTextarea widthTextarea' onChange={newMessagehandleChange} value={newMessage}></textarea>
-        <button className='colorBlue bold em buttonColor borde-fino' onClick={sendMessageTextarea} value={newMessage}>Enviar</button>
+        <div className='colFlex flex-wrap align-content colorBlue'>
+            <h1 className="text">Envia un mensaje</h1>
+            <textarea className='fontTextarea colorBlue heightTextarea widthTextarea' onChange={newMessagehandleChange} value={newMessage}></textarea>
+            <button className='colorBlue bold em buttonColor borde-fino' onClick={sendMessageTextarea} value={newMessage}>Enviar</button>
         </div>
     );
 }

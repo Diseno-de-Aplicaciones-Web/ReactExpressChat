@@ -17,8 +17,8 @@ function App() {
     <>
       <div className='bg-fondo margin-topNo'>
         <div className='rowGrid'>
-        <Login id={id} password={password} token={setToken} />  {/*Login (Iniciar Sesión) subcomponente del Componente App()*/}
-        <SignUp idSetter={setId} passwordSetter={setPassword} url={url} /> {/*SignUp (Registro) subcomponente del Componente App()*/} 
+        <Login id={id} password={password} idSetter={setId} passwordSetter={setPassword} tokenSetter={setToken} />  {/*Login (Iniciar Sesión) subcomponente del Componente App()*/}
+        <SignUp idSetter={setId} passwordSetter={setPassword} /> {/*SignUp (Registro) subcomponente del Componente App()*/} 
         <Messages token={token} /> {/*Messages (ver lista de mensajes) subcomponente del Componente App()*/}
         <NewMessage token={token} /> {/*NewMessage (enviar mensaje) subcomponente del Componente App()*/}
         </div>
@@ -29,13 +29,8 @@ function App() {
 
 export default App;
 
-//<Login idSetter={setId} token={token} />  {/*Login (Iniciar Sesión) subcomponente del Componente App()*/}
 
 // funciona ver mensajes actualizados del chat y enviar mensajes, metiendo id y contraseña a mano
 //<Login />
 //<Messages id="1649672125202" password="abc123" />
 //<NewMessage id="1649672125202" password="abc123" />
-
-// <SignUp idSetter={setId} url={url} /> {/*SignUp (Registro) subcomponente del Componente App()*/} 
-//<Messages id={id} token={token} /> {/*Messages (ver lista de mensajes) subcomponente del Componente App()*/}
-//<NewMessage id={id} token={token} /> {/*NewMessage (enviar mensaje) subcomponente del Componente App()*/}

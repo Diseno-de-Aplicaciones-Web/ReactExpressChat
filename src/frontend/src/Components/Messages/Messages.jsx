@@ -10,7 +10,6 @@ const url = "https://web-develop-react-express-chat.herokuapp.com";
 // Actualizar y ver lista de mensajes, método GET
 function Messages(props) {
     const [messages, setMessages] = useState("");
-    const token = authToken(props.id, props.password);
     const data = JSON.stringify({content: messages});
 
     // función autentificación GET
@@ -18,7 +17,7 @@ function Messages(props) {
         const response = await fetch(
             url,
             {
-                headers: { // te autoriza, da token autorizado
+                headers: { 
                     'Content-Type': 'application/json;charset=utf-8',
                     Authorization: token
                 }
@@ -35,7 +34,9 @@ function Messages(props) {
 
     // ya estamos autorizados y vemos los mensajes actualizados en pantalla
     function updateMessages() {
-       authGet(url + '/messages/', token)
+        if (props.token !== 0){
+            authGet(url + '/messages/', props.token);
+        }
     }
 
     // método setTimeout() o setInterval() para actualizar cada segundo
