@@ -8,7 +8,7 @@ import authToken from "../tools/tools.mjs";
 const urlGetMensajes = "https://web-develop-react-express-chat.herokuapp.com/messages/";
 
 // Componente Login para logearte (Iniciar Sesión), método POST
-function Login({ id, password, idSetter, passwordSetter, tokenSetter }) {
+function Login({ id, password, idSetter, passwordSetter, tokenSetter, setErrorLog, setAlertText }) {
     //let userToken = null; 
     let userToken = 0;
 
@@ -27,9 +27,9 @@ function Login({ id, password, idSetter, passwordSetter, tokenSetter }) {
         const response = await fetch(
             url,
             {
-                headers: { 
+                headers: {
                     'Content-Type': 'application/json;charset=utf-8',
-                    Authorization: token 
+                    Authorization: token
                 }
             });
         const status = response.status;
@@ -38,7 +38,7 @@ function Login({ id, password, idSetter, passwordSetter, tokenSetter }) {
 
     // función Inicia Sesión
     function iniciarSesion() {
-        if (id === "" || password === "") { 
+        if (id === "" || password === "") {
             window.alert("¡El campo no puede quedar vacío!");
             return;
         }
@@ -53,64 +53,66 @@ function Login({ id, password, idSetter, passwordSetter, tokenSetter }) {
                     // Códigos de estado 200 indican que la acción solicitada por el cliente ha sido recibida, entendida, aceptada y procesada correctamente.
                     // Código de estado 200 OK, la solicitud se ha procesado sin problemas y se envían al cliente los datos solicitados.
                     case 200:
-                        window.alert("Usuario autorizado"); 
+                        setErrorLog("Usuario autorizado");
                         tokenSetter(userToken);
                         break;
                     // Códigos de estado 400 Errores del cliente.
                     // Error 400 el servidor no entiende la petición del navegador porque la sintaxis no es correcta.
                     case 400:
-                        window.alert("Mala petición");
+                        setErrorLog("Mala petición");
                         break;
                     // Error 401 No autorizado, el cliente requiere la autenticación del servidor.
                     case 401:
-                        window.alert("NO autorizado, se requiere autenticación válida");
+                        setErrorLog("NO autorizado, se requiere autenticación válida");
                         break;
                     // Error 403 Este código se devuelve cuando un usuario intenta acceder a algo a lo que no tiene permiso para ver.
                     case 403:
-                        window.alert("El acceso a ese recurso está prohibido");
+                        setErrorLog("El acceso a ese recurso está prohibido");
                         break;
                     // Error 404 El recurso que solicita el navegador no se encuentra o no está disponible en el servidor.
                     case 404:
-                        window.alert("No se encontró el recurso solicitado");
+                        setErrorLog("No se encontró el recurso solicitado");
                         break;
                     // Error 408 El servidor no recibió la solicitud completa que fue enviada por el navegador en un período de tiempo especificado, por conexión lenta, etc....
                     case 408:
-                        window.alert("Error de tiempo de espera de solicitud");
+                        setErrorLog("Error de tiempo de espera de solicitud");
                         break;
                     // Error 410 Indica que la URL ha desaparecido. Esa página ya no existe en el servidor.
                     case 410:
-                        window.alert("La URL no existe");
+                        setErrorLog("La URL no existe");
                         break;
                     // Error 429 El navegador realiza demasiadas peticiones al servidor en un período de tiempo determinado.
                     case 429:
-                        window.alert("Demasiadas peticiones al servidor");
+                        setErrorLog("Demasiadas peticiones al servidor");
                         break;
                     // Códigos de estado 500 Errores del servidor.
                     // Error 500 el servidor encontró un problema y no puede procesar la solicitud.
                     case 500:
-                        window.alert("Error interno del servidor, no se puede procesar la solicitud");
+                        setErrorLog("Error interno del servidor, no se puede procesar la solicitud");
                         break;
                     // Error 502 el servidor está funcionando como un proxy o puerta de enlace, y ha recibido una respuesta inválida desde dicho servidor.
                     case 502:
-                        window.alert("Proxy o Puerta de enlace incorrecta");
+                        setErrorLog("Proxy o Puerta de enlace incorrecta");
                         break;
                     // Error 503 el servidor no está disponible, por sobrecarga del servidor o por encontrarse este en mantenimiento.
                     case 503:
-                        window.alert("El servidor no está disponible");
+                        setErrorLog("El servidor no está disponible");
                         break;
                     default:
-                        window.alert("Error");
+                        setErrorLog("Error");
                         break;
                 }
             }
         );
+        setAlertText(true)
     }
 
     // función Cierra Sesión
     function cerrarSesion() {
         // Se pasa tokenSetter(0) a cero para cerrar la Sesión
         tokenSetter(0);
-        window.alert("Te has desconectado")
+        setErrorLog("¡Te has desconectado!")
+        setAlertText(true)
     }
 
     return (

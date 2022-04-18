@@ -46,7 +46,7 @@ function NewMessage(props) {
         if (props.token !== 0) {
             authPost(url + "/message/", props.token, data);
         } else {
-            window.alert("Usuario no conectado " + " Tienes que Iniciar Sesión")
+            window.alert("¡Usuario no conectado! " + " ¡Tienes que Iniciar Sesión!")
         }
     }
 
