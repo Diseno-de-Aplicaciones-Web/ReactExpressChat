@@ -34,7 +34,7 @@ function App() {
           idSetter={setId} 
           passwordSetter={setPassword} 
           tokenSetter={setToken} 
-          /> }  {/*Login (Iniciar Sesión) subcomponente del Componente App()*/}
+          /> }  {/*Renderizado condicional con las llaves - Login (Iniciar Sesión) subcomponente del Componente App()*/}
         { signed === false &&  <SignUp 
           setAlertText={setAlertText}
           setErrorLog={setErrorLog} 
