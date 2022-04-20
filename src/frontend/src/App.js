@@ -12,8 +12,8 @@ function App() {
   const [password, setPassword ] = useState("");
   const [token, setToken] = useState(0);
   const [ signed, setSigned ] = useState(false);
-  const [errorLog, setErrorLog] = useState("");
-  const [alertText, setAlertText] = useState(false);
+  const [errorLog, setErrorLog] = useState(""); // para el alert personalizado
+  const [alertText, setAlertText] = useState(false); // para el alert personalizado
 
   const url = "https://web-develop-react-express-chat.herokuapp.com";
 
