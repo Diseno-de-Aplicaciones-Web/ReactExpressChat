@@ -73,7 +73,7 @@
 
 .rowGrid {
     display: grid;
-    grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr 1fr;
 }
 
 .grid {
@@ -83,6 +83,7 @@
 .flex {
     display: flex;
     flex-direction: row;
+    align-content:flex-start;
 }
 
 .colFlex {
@@ -96,6 +97,10 @@
 
 .align-content {
     align-content: center;
+}
+
+.align-contentStart {
+    align-content:flex-start;
 }
 
 .align-items {
