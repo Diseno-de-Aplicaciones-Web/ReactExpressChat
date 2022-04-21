@@ -54,58 +54,58 @@ function Login({ id, password, idSetter, passwordSetter, tokenSetter, setErrorLo
                     // Códigos de estado 200 indican que la acción solicitada por el cliente ha sido recibida, entendida, aceptada y procesada correctamente.
                     // Código de estado 200 OK, la solicitud se ha procesado sin problemas y se envían al cliente los datos solicitados.
                     case 200:
-                        setErrorLog("Usuario autorizado");
+                        window.alert("Usuario autorizado");
                         tokenSetter(userToken);
                         break;
                     // Códigos de estado 400 Errores del cliente.
                     // Error 400 el servidor no entiende la petición del navegador porque la sintaxis no es correcta.
                     case 400:
-                        setErrorLog("Mala petición");
+                        window.alert("Mala petición");
                         break;
                     // Error 401 No autorizado, el cliente requiere la autenticación del servidor.
                     case 401:
-                        setErrorLog("NO autorizado, se requiere autenticación válida");
+                        window.alert("NO autorizado, se requiere autenticación válida");
                         break;
                     // Error 403 Este código se devuelve cuando un usuario intenta acceder a algo a lo que no tiene permiso para ver.
                     case 403:
-                        setErrorLog("El acceso a ese recurso está prohibido");
+                        window.alert("El acceso a ese recurso está prohibido");
                         break;
                     // Error 404 El recurso que solicita el navegador no se encuentra o no está disponible en el servidor.
                     case 404:
-                        setErrorLog("No se encontró el recurso solicitado");
+                        window.alert("No se encontró el recurso solicitado");
                         break;
                     // Error 408 El servidor no recibió la solicitud completa que fue enviada por el navegador en un período de tiempo especificado, por conexión lenta, etc....
                     case 408:
-                        setErrorLog("Error de tiempo de espera de solicitud");
+                        window.alert("Error de tiempo de espera de solicitud");
                         break;
                     // Error 410 Indica que la URL ha desaparecido. Esa página ya no existe en el servidor.
                     case 410:
-                        setErrorLog("La URL no existe");
+                        window.alert("La URL no existe");
                         break;
                     // Error 429 El navegador realiza demasiadas peticiones al servidor en un período de tiempo determinado.
                     case 429:
-                        setErrorLog("Demasiadas peticiones al servidor");
+                        window.alert("Demasiadas peticiones al servidor");
                         break;
                     // Códigos de estado 500 Errores del servidor.
                     // Error 500 el servidor encontró un problema y no puede procesar la solicitud.
                     case 500:
-                        setErrorLog("Error interno del servidor, no se puede procesar la solicitud");
+                        window.alert("Error interno del servidor, no se puede procesar la solicitud");
                         break;
                     // Error 502 el servidor está funcionando como un proxy o puerta de enlace, y ha recibido una respuesta inválida desde dicho servidor.
                     case 502:
-                        setErrorLog("Proxy o Puerta de enlace incorrecta");
+                        window.alert("Proxy o Puerta de enlace incorrecta");
                         break;
                     // Error 503 el servidor no está disponible, por sobrecarga del servidor o por encontrarse este en mantenimiento.
                     case 503:
-                        setErrorLog("El servidor no está disponible");
+                        window.alert("El servidor no está disponible");
                         break;
                     default:
-                        setErrorLog("Error");
+                        window.alert("Error");
                         break;
                 }
             }
         );
-        setAlertText(true)
+        //setAlertText(true)
     }
 
     // función Cierra Sesión
