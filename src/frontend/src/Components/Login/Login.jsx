@@ -54,7 +54,7 @@ function Login({ id, password, idSetter, passwordSetter, tokenSetter, setErrorLo
                     // Códigos de estado 200 indican que la acción solicitada por el cliente ha sido recibida, entendida, aceptada y procesada correctamente.
                     // Código de estado 200 OK, la solicitud se ha procesado sin problemas y se envían al cliente los datos solicitados.
                     case 200:
-                        setErrorLog("Usuario autorizado");
+                        window.alert("Usuario autorizado");
                         tokenSetter(userToken);
                         break;
                     // Códigos de estado 400 Errores del cliente.
@@ -64,7 +64,7 @@ function Login({ id, password, idSetter, passwordSetter, tokenSetter, setErrorLo
                         break;
                     // Error 401 No autorizado, el cliente requiere la autenticación del servidor.
                     case 401:
-                        setErrorLog("NO autorizado, se requiere autenticación válida");
+                        window.alert("NO autorizado, se requiere autenticación válida");
                         break;
                     // Error 403 Este código se devuelve cuando un usuario intenta acceder a algo a lo que no tiene permiso para ver.
                     case 403:
@@ -105,7 +105,7 @@ function Login({ id, password, idSetter, passwordSetter, tokenSetter, setErrorLo
                 }
             }
         );
-        setAlertText(true)
+        //setAlertText(true)
     }
 
     // función Cierra Sesión
